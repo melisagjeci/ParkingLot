@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Subscriber>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: #b3ecff;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-custom {
+        background-color: #141414;
+        border-radius: 12px;
+        padding: 40px;
+        margin-top: 40px;
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.08);
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #00bfff;
+        text-align: center;
+        text-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
+        margin-bottom: 30px;
+    }
+
+    .table th {
+        background-color: #1d1d1d;
+        color: #00bfff;
+        border: none;
+    }
+
+    .table td {
+        background-color: #222;
+        border: none;
+        color: #b3ecff;
+        vertical-align: middle;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #2a2a2a;
+    }
+</style>
+
+<div class="container container-custom">
+    <h2><i class="bi bi-people-fill me-2"></i> Menaxho Abonentët</h2>
+    <div class="d-flex justify-content-end mb-4">
+        <a class="btn btn-outline-info" asp-controller="SubscribersView" asp-action="Create">
+            <i class="bi bi-person-plus-fill me-1"></i> Shto Abonent
+        </a>
+    </div>
+
+    <table class="table table-hover table-bordered table-responsive rounded">
+        <thead class="text-center">
+            <tr>
+                <th>Emri</th>
+                <th>Mbiemri</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Nr. Karte</th>
+                <th>Targa</th>
+                <th>Datëlindja</th>
+                <th>Veprime</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.FirstName</td>
+                    <td>@s.LastName</td>
+                    <td>@s.Email</td>
+                    <td>@s.PhoneNumber</td>
+                    <td>@s.IdCardNumber</td>
+                    <td>@s.PlateNumber</td>
+                    <td>@s.Birthday.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@s.Id" method="post"
+                              onsubmit="return confirm('A jeni i sigurt që dëshironi ta fshini këtë abonent?');">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash-fill"></i> Fshi
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

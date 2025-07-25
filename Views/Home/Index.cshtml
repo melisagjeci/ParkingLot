@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Premium Parking ";
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .header {
+        text-align: center;
+        padding: 3rem 1rem 2rem 1rem;
+    }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+        }
+
+    .section-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+        color: #ffd700;
+        border-bottom: 1px solid #333;
+        padding-bottom: 0.5rem;
+    }
+
+    .card-custom {
+        background-color: #1e1e1e;
+        border-radius: 14px;
+        border: 1px solid #2a2a2a;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+        padding: 1.4rem;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+    }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+            border-color: #ffd700;
+        }
+
+    .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-custom {
+        border-radius: 30px;
+        padding: 0.6rem;
+        font-weight: 500;
+        width: 100%;
+    }
+</style>
+
+<div class="container">
+    <div class="header">
+        <h1><i class="bi bi-gem me-2"></i> Premium Parking </h1>
+        <p class="text-secondary">Menaxho çdo seksion me stil, thjeshtësi dhe performancë.</p>
+    </div>
+
+    <div class="section-title"><i class="bi bi-currency-exchange me-2"></i>Funksionalitetet Kryesore</div>
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card-custom">
+                <i class="bi bi-cash-coin icon text-warning"></i>
+                <h5>Tarifat</h5>
+                <a href="/PricingPlans" class="btn btn-outline-warning btn-custom">Shiko tarifat</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-custom">
+                <i class="bi bi-grid-3x3-gap icon text-info"></i>
+                <h5>Vendparkimet</h5>
+                <a href="/ParkingSpots" class="btn btn-outline-info btn-custom">Shiko Vendparkimet</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-custom">
+                <i class="bi bi-people-fill icon text-success"></i>
+                <h5>Abonentët</h5>
+                <a href="/SubscribersView/Index" class="btn btn-outline-success btn-custom">Menaxho Abonentët</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title"><i class="bi bi-arrow-left-right me-2"></i>Seksione Plotësuese</div>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card-custom">
+                <i class="bi bi-box-arrow-in-right icon text-primary"></i>
+                <h5>Check-in / Check-out</h5>
+                <a href="/Log/DailyReport" class="btn btn-outline-primary btn-custom">Raporti Ditor</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-custom">
+                <i class="bi bi-calendar-event icon text-secondary"></i>
+                <h5>Abonimet</h5>
+                <a href="/Subscriptions" class="btn btn-outline-secondary btn-custom">Menaxho Abonime</a>
+            </div>
+        </div>
+    </div>
+</div>
